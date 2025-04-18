@@ -1,0 +1,290 @@
+/* Base Styles */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  z-index: 1;
+}
+
+/* Text Styles */
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+}
+
+.text-gradient {
+  font-size: 1.5rem;
+  color: #3498db;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.5s ease;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.name-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #2c3e50, #3498db);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.5s ease;
+  transition-delay: 0.2s;
+}
+
+.job-titles {
+  font-size: 1.5rem;
+  color: #7f8c8d;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.5s ease;
+  transition-delay: 0.4s;
+}
+
+.title-item {
+  display: inline-block;
+  position: relative;
+}
+
+.title-item::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #3498db;
+  transition: width 0.3s ease;
+}
+
+.title-item:hover::after {
+  width: 100%;
+}
+
+.title-separator {
+  margin: 0 10px;
+  color: #bdc3c7;
+}
+
+/* Image Styles */
+.hero-image {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+  padding: 20px;
+}
+
+.image-wrapper {
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.profile-image {
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transform: scale(0.9) rotate(-5deg);
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.image-border-animation {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
+  border: 3px dashed #3498db;
+  border-radius: 30px;
+  animation: rotate 20s linear infinite;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+.image-dots {
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  right: -30px;
+  bottom: -30px;
+  background-image: radial-gradient(#3498db 2px, transparent 2px);
+  background-size: 20px 20px;
+  z-index: 0;
+  opacity: 0.1;
+  border-radius: 40px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Button Styles - Fixed Visibility */
+.cta-buttons {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.btn {
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.hire-btn {
+  background: linear-gradient(45deg, #3498db, #2c3e50) !important;
+  border: none !important;
+  color: white !important;
+}
+
+.hire-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
+}
+
+.projects-btn {
+  border: 2px solid #3498db !important;
+  color: #3498db !important;
+  background-color: transparent !important;
+}
+
+.projects-btn:hover {
+  background-color: #3498db !important;
+  color: white !important;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
+}
+
+/* Download Button - Fixed */
+.download-btn-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+}
+
+.download-btn {
+  background: linear-gradient(45deg, #2ecc71, #27ae60) !important;
+  color: white !important;
+  border: none !important;
+  padding: 15px 25px;
+  border-radius: 50px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+  transition: all 0.3s ease;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.download-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(46, 204, 113, 0.6);
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(46, 204, 113, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .name-title {
+    font-size: 2.5rem;
+  }
+  
+  .job-titles {
+    font-size: 1.3rem;
+  }
+  
+  .hero-text {
+    text-align: center !important;
+    margin-bottom: 40px;
+  }
+  
+  .cta-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .name-title {
+    font-size: 2rem;
+  }
+  
+  .job-titles {
+    font-size: 1.1rem;
+  }
+  
+  .text-gradient {
+    font-size: 1.2rem;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .download-btn {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    right: 15px;
+    bottom: 15px;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hire-btn,
+  .projects-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+}
